@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="text-align:center">
+<h1>Login</h1>
+<form action="login" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit" name="login" placeholder="Login">
+    {% for msg in messages %}
+        {{msg}}
+    {% endfor %}
+</form>
+</body>
+</html>

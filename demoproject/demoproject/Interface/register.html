@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        label{
+              background-color:LightBlue;
+              color:Snow;
+              font-family:"Palatino";
+             }
+    </style>
+</head>
+<body style="back">
+<h1 style="text-align:center;font-family:'Trebuchet MS';">Registration</h1>
+<form method="POST" action="registeration" style="padding:4px; text-align:center;">
+    {% csrf_token %}
+    <input type="text" name="f_name" placeholder="First Name">
+    <input type="text" name="l_name" placeholder="Last Name"><br>
+    <input type="text" name="username" placeholder="Enter Username"><br>
+    <input type="email" name="email" placeholder="Enter your E-Mail"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="password" name="password2" placeholder="Re-Enter Password"><br>
+    <input type="submit" name="sub"><br>
+    {% for msg in messages %}
+        {{msg}}
+    {% endfor %}
+</form>
+</body>
+</html>
